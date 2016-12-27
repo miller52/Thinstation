@@ -1,0 +1,32 @@
+# Description: toolset for interaction with virtualized desktop devices
+# URL:         http://spice-space.org
+# Maintainer:  Thomas Penteker, tek at serverop dot de 
+# Packager:    Savichev Alexandr, savicheval at gmail dot com
+# Depends on:  glib alsa-lib xorg-libpixman openssl libjpeg-turbo zlib pyparsing libsasl2 spice-protocol >= 0.12.12 gstreamer-1.0 gstreamer-plugins-base-1.0
+
+#--exists --print-errors "gstreamer-1.0 gstreamer-base-1.0 gstreamer-app-1.0 gstreamer-video-1.0"
+
+name=spice
+version=0.13.3
+release=1
+source=(http://spice-space.org/download/releases/spice-$version.tar.bz2)
+
+build() {
+    cd $name-$version
+
+    ./configure --prefix=/usr \
+	--datarootdir=/usr/lib \
+	--disable-celt051 \
+	--enable-gstreamer=1.0 \
+	--enable-lz4=yes \
+	--enable-manual=no \
+	--enable-static=no \
+	--enable-shared=yes \
+	--enable-smartcard=yes \
+	--with-sasl=yes \
+	--enable-automated-tests=yes
+
+    make
+    make DESTDIR=$PKG install
+
+}
