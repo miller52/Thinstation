@@ -1,0 +1,14 @@
+# libsasl2 pkg-config source file
+
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libsasl2
+Description: Simple Authentication and Security Layer library
+Version: 2.1.25
+Requires:
+Conflicts:
+Libs: -L${libdir} -lsasl2 -lm
+Cflags: -I${includedir}
