@@ -56,4 +56,9 @@ prt-get update libsoup --config-prepend="prtdir /usr/ports/contrib"
 prt-get depinst libphodav --config-prepend="prtdir /usr/ports/contrib"
 prt-get update spice-gtk --config-prepend="prtdir /usr/ports/contrib"
 ```
-All
+
+add line in your file build.conf
+```
+packages spice
+```
+
