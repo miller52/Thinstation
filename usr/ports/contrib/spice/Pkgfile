@@ -7,7 +7,7 @@
 name=spice
 version=0.13.3
 release=1
-source=(http://spice-space.org/download/releases/spice-$version.tar.bz2)
+source=(http://spice-space.org/download/releases/$name-$version.tar.bz2)
 
 build() {
     cd $name-$version
