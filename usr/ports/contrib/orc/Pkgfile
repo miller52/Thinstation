@@ -1,0 +1,26 @@
+# Description: The Open Resource Container is a general-purpose, platform-independant file format for storing many different types of data that applications may need.
+# URL:         http://code.entropywave.com/projects/orc/
+# Maintainer:  
+# Packager:    Savichev Alexandr, savicheval at gmail dot com
+# Depends on: 
+
+name=orc
+version=0.4.26
+release=1
+source=(https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	autoreconf -ivf
+	automake
+	./configure \
+		--prefix=/usr \
+		--mandir=/usr/man \
+		--disable-dependency-tracking \
+		--enable-shared \
+		--disable-static
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/gtk-doc
+}
