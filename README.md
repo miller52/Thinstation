@@ -1,4 +1,4 @@
-# Thinstation
+# Thinstation port and Dependency for Spice-Gtk 0.33
 
 ```
 configure:
