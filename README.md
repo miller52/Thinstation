@@ -1,8 +1,34 @@
 # Thinstation
 
+```
+configure:
+
+        Spice-Gtk 0.33
+        ==============
+
+        prefix:                   /usr
+        c compiler:               gcc
+        Target:                   Unix
+
+        Gtk:                      no
+        Coroutine:                ucontext
+        PulseAudio:               yes
+        GStreamer Audio:          yes
+        GStreamer Video:          yes
+        SASL support:             yes
+        Smartcard support:        yes
+        USB redirection support:  yes with libusb hotplug
+        DBus:                     yes
+        WebDAV support:           yes
+        LZ4 support:              yes
+```
 
 
-Instruction
+Instruction:
+
+1. Copy files to Thinstation directory
+2. Enter to TS (sudo ./setup-chroot)
+3. Run the following command:
 
 Check and enable user ports in /usr/ports/contrib
 ```
