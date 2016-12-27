@@ -1,0 +1,18 @@
+# Description: library cacard
+# URL:         http://spice-space.org
+# Maintainer:
+# Packager:    Savichev Alexandr, savicheval at gmail dot com
+# Depends on:  nss pcsc-lite pcsc-tools
+
+name=libcacard
+version=0.1.2
+release=1
+source=(http://www.spice-space.org/download/libcacard/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr CPPFLAGS='-I/usr/include/nss -I/usr/include/nspr' LIBS='-lpthread'
+
+	make
+	make DESTDIR=$PKG install
+}
