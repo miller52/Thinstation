@@ -1,0 +1,28 @@
+# Description: Low-level data structure handling, portability wrappers, and interfaces for runtime functionality
+# URL: http://www.gtk.org/
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Packager: Savichev Alexandr, savicheval at gmail dot com
+# Depends on: libpcre >=8.38
+
+name=glib
+version=2.43.90
+release=1
+source=(http://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz)
+
+build () {
+<------>cd $name-$version
+<------>autoreconf -ivf
+<------>automake
+<------>./configure --prefix=/usr \
+<------><------>--mandir=/usr/man --with-pcre=system \
+<------><------>--with-runtime-libdir=../../lib \
+<------><------>--with-gio-module-dir=/lib/gio/modules \
+<------><------>--disable-static \
+<------><------>--enable-shared
+
+<------>make
+<------>make -j 1 DESTDIR=$PKG install
+<------>rm -rf $PKG/usr/share/{gtk-doc,locale,bash-completion}
+<------>rm -rf $PKG/usr/man
+<------>rm -rf $PKG/usr/etc/bash_completion.d
+}
