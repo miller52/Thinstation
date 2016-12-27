@@ -1,10 +1,8 @@
-# Description: C++ interface for the popular glib library.
-# URL: http://gtkmm.sourceforge.net/
-# Maintainer: Danny Rawlins, monster dot romster at gmail dot com
+# Description: WebDav server implementation using libsoup (RFC 4918).
+# URL: http://ftp.gnome.org/pub/GNOME/sources/phodav/
+# Maintainer: 
 # Packager: Savichev Alexandr, savicheval at gmail dot com
 # Depends on: glib-2.0 >= 2.43.90 libsoup-2.4 >= 2.49.91 
-
-#--exists --print-errors "libphodav-2.0 glib-2.0 >= 2.43.90 libsoup-2.4 >= 2.49.91" libsoup >=2.48.1
 
 name=libphodav
 version=2.1
