@@ -1,0 +1,31 @@
+Pkgfile 
+# Description: Gstreamer is a library that allows the construction of graphs of media-handling components.
+# URL: http://gstreamer.freedesktop.org/
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Packager: Savichev Alexandr, savicheval at gmail dot com
+# Depends on: gstreamer-1.0 gstreamer-plugins-base-1.0
+
+name=gstreamer-plugins-ugly-1.0
+version=1.6.1
+release=1
+source=(https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-$version.tar.xz)
+
+build() {
+    cd gst-plugins-ugly-$version
+
+    autoreconf -ivf
+    automake
+#    patch -p1 -i $SRC/configure.patch
+
+    ./configure --prefix=/usr \
+	--mandir=/usr/man \
+	--disable-crystalhd \
+	--disable-dependency-tracking \
+	--disable-valgrind \
+	--enable-shared \
+	--disable-static
+
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share
+}
