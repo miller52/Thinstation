@@ -1,0 +1,24 @@
+# Description: usbredir libraries and utilities
+# URL:         http://www.spice-space.org/page/UsbRedir
+# Maintainer:
+# Packager:    Savichev Alexandr, savicheval at gmail dot com
+# Depends on:
+
+name=libusbredir
+version=0.7
+release=1
+source=(http://spice-space.org/download/usbredir/usbredir-$version.tar.bz2)
+
+build() {
+    cd usbredir-$version
+
+    autoreconf -ivf
+    automake
+
+    ./configure --prefix=/usr
+
+    make
+    make DESTDIR=$PKG install
+
+    rm -rf $PKG/usr/share
+}
