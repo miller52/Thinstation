@@ -30,7 +30,7 @@ Instruction:
 2. Enter to TS (sudo ./setup-chroot)
 3. Run the following command:
 
-Check and enable user ports in /usr/ports/contrib
+Enables if not the user maintained contrib collection in /usr/ports/contrib
 ```
 sed -i 's|#prtdir /usr/ports/contrib|prtdir /usr/ports/contrib|' /ts/etc/prt-get.conf
 ```
