@@ -1,0 +1,35 @@
+# Description: Gstreamer is a library that allows the construction of graphs of media-handling components.
+# URL: http://gstreamer.freedesktop.org/
+# Maintainer: Jose V Beneyto, sepen at crux dot nu
+# Packager: Savichev Alexandr, savicheval at gmail dot com
+# Depends on: glib libxml2 python
+
+##Requires: glib-2.0, gobject-2.0
+
+name=gstreamer-1.0
+version=1.6.1
+release=1
+source=(https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-$version.tar.xz)
+
+build() {
+    cd gstreamer-$version
+
+    ./configure --prefix=/usr \
+	--mandir=/usr/man \
+        --libexecdir=/usr/libexec \
+	--disable-rpath \
+	--disable-tests \
+        --enable-debug \
+        --disable-nls \
+        --disable-dependency-tracking \
+        --disable-valgrind \
+        --disable-examples \
+	--disable-introspection \
+	--disable-static \
+	--enable-shared
+
+
+    make
+    make DESTDIR=$PKG install
+    rm -r $PKG/usr/share $PKG/usr/man
+}
