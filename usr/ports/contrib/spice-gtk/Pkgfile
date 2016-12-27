@@ -1,0 +1,35 @@
+# Description:  spice-gtk client
+# URL: http://spice-space.org
+# Maintainer:
+# Depends on: libusb-1.0 >= 1.0.9 libusbredir libsasl2 libcacard libphodav gstreamer-plugins-bad-1.0
+
+name=spice-gtk
+version=0.33
+release=1
+source=(http://spice-space.org/download/gtk/$name-$version.tar.bz2 usb.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 -i $SRC/usb.patch
+
+    ./configure --prefix=/usr \
+	--with-gtk=no \
+	--enable-gstaudio=yes \
+	--disable-introspection \
+	--enable-smartcard=yes \
+	--enable-webdav=yes \
+	--with-sasl=yes \
+	--enable-usbredir=yes \
+	--without-python \
+	--exec-prefix=/ \
+	--sysconfdir=/etc \
+	--libexecdir=/lib \
+	--mandir=/usr/man \
+	--disable-extras
+
+    make
+    make DESTDIR=$PKG install
+
+    rm -rf $PKG/usr/share{gtk-doc,locale} $PKG/usr/man
+}
