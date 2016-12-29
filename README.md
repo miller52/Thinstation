@@ -1,5 +1,9 @@
 # Thinstation port and dependency for Spice-Gtk 0.33
 
+Status: ***Not working***
+
+
+
 ```
 configure:
 
