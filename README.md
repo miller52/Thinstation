@@ -44,7 +44,7 @@ Install & upgrade Dependency
 ```
 prt-get remove cyrus-sasl
 
-prt-get update -fb -uf -um glib libpcre pango spice spice-gtk spice-protocol virt-viewer libsoup
+prt-get update -fr -uf -um glib libpcre pango spice spice-gtk spice-protocol virt-viewer libsoup
 
 prt-get depinst -fi -uf -um at-spi2-core atk gdk-pixbuf glib gobject-introspection gstreamer-1.0 gstreamer-plugins-bad-1.0 gstreamer-plugins-base-1.0 gstreamer-plugins-good-1.0 gstreamer-plugins-libav-1.0 gstreamer-plugins-ugly-1.0 gtk3 harfbuzz libatk-bridge2.0 libcacard libgovirt libpcre libphodav libsasl2 libsoup libusb libusbredir orc pango rest spice spice-gtk spice-protocol virt-viewer
 
