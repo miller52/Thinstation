@@ -14,7 +14,7 @@ configure:
         c compiler:               gcc
         Target:                   Unix
 
-        Gtk:                      no
+        Gtk:                      gtk3
         Coroutine:                ucontext
         PulseAudio:               yes
         GStreamer Audio:          yes
@@ -38,35 +38,20 @@ Enables if not the user maintained contrib collection in /usr/ports/contrib
 ```
 echo "prtdir /usr/ports/contrib:atk, at-spi2-core, gdk-pixbuf, glib, gobject-introspection, gstreamer-1.0, gstreamer-plugins-bad-1.0, gstreamer-plugins-base-1.0, gstreamer-plugins-good-1.0, gstreamer-plugins-libav-1.0, gstreamer-plugins-ugly-1.0, gtk3, harfbuzz, libatk-bridge2.0, libcacard, libgovirt, libpcre, libphodav, libsasl2, libsoup, libusbredir, orc, pango, rest, spice, spice-gtk, spice-protocol, virt-viewer" >> /ts/etc/prt-get.conf
 
-prt-get install -fi -uf -um at-spi2-core atk gdk-pixbuf glib gobject-introspection gstreamer-1.0 gstreamer-plugins-bad-1.0 gstreamer-plugins-base-1.0 gstreamer-plugins-good-1.0 gstreamer-plugins-libav-1.0 gstreamer-plugins-ugly-1.0 gtk3 harfbuzz libatk-bridge2.0 libcacard libgovirt libpcre libphodav libsasl2 libsoup libusbredir orc pango rest spice spice-gtk spice-protocol virt-viewer
 
-prt-get update -fb -uf -um glib libpcre pango spice spice-gtk spice-protocol virt-viewer
 ```
 Install & upgrade Dependency
 ```
 prt-get remove cyrus-sasl
-prt-get depinst libsasl2 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst libcacard --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-plugins-base-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-plugins-libav-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-plugins-good-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-plugins-bad-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst gstreamer-plugins-ugly-1.0 --config-prepend="prtdir /usr/ports/contrib"
-prt-get update spice-protocol --config-prepend="prtdir /usr/ports/contrib"
-prt-get update spice --config-prepend="prtdir /usr/ports/contrib"
-prt-get update libpcre --config-prepend="prtdir /usr/ports/contrib"
-prt-get update glib --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst orc --config-prepend="prtdir /usr/ports/contrib"
-prt-get install libusb
-prt-get depinst libusbredir --config-prepend="prtdir /usr/ports/contrib"
-prt-get update libsoup --config-prepend="prtdir /usr/ports/contrib"
-prt-get depinst libphodav --config-prepend="prtdir /usr/ports/contrib"
-prt-get update spice-gtk --config-prepend="prtdir /usr/ports/contrib"
+
+prt-get update -fb -uf -um glib libpcre pango spice spice-gtk spice-protocol virt-viewer libsoup
+
+prt-get depinst -fi -uf -um at-spi2-core atk gdk-pixbuf glib gobject-introspection gstreamer-1.0 gstreamer-plugins-bad-1.0 gstreamer-plugins-base-1.0 gstreamer-plugins-good-1.0 gstreamer-plugins-libav-1.0 gstreamer-plugins-ugly-1.0 gtk3 harfbuzz libatk-bridge2.0 libcacard libgovirt libpcre libphodav libsasl2 libsoup libusb libusbredir orc pango rest spice spice-gtk spice-protocol virt-viewer
+
 ```
 
 add line in your file build.conf
 ```
-packages spice
+packages spice-gtk
 ```
 
