@@ -36,7 +36,11 @@ Instruction:
 
 Enables if not the user maintained contrib collection in /usr/ports/contrib
 ```
-sed -i 's|#prtdir /usr/ports/contrib|prtdir /usr/ports/contrib|' /ts/etc/prt-get.conf
+echo "prtdir /usr/ports/contrib:atk, at-spi2-core, gdk-pixbuf, glib, gobject-introspection, gstreamer-1.0, gstreamer-plugins-bad-1.0, gstreamer-plugins-base-1.0, gstreamer-plugins-good-1.0, gstreamer-plugins-libav-1.0, gstreamer-plugins-ugly-1.0, gtk3, harfbuzz, libatk-bridge2.0, libcacard, libgovirt, libpcre, libphodav, libsasl2, libsoup, libusbredir, orc, pango, rest, spice, spice-gtk, spice-protocol, virt-viewer" >> /ts/etc/prt-get.conf
+
+prt-get install -fi -uf -um at-spi2-core atk gdk-pixbuf glib gobject-introspection gstreamer-1.0 gstreamer-plugins-bad-1.0 gstreamer-plugins-base-1.0 gstreamer-plugins-good-1.0 gstreamer-plugins-libav-1.0 gstreamer-plugins-ugly-1.0 gtk3 harfbuzz libatk-bridge2.0 libcacard libgovirt libpcre libphodav libsasl2 libsoup libusbredir orc pango rest spice spice-gtk spice-protocol virt-viewer
+
+prt-get update -fb -uf -um glib libpcre pango spice spice-gtk spice-protocol virt-viewer
 ```
 Install & upgrade Dependency
 ```
