@@ -34,7 +34,10 @@ Instruction:
 2. Enter to TS (sudo ./setup-chroot)
 3. Run the following command:
 
-Enables if not the user maintained contrib collection in /usr/ports/contrib
+Add first line in /ts/etc/prt-get.conf
+```
+prtdir /usr/ports/contrib
+```
 ```
 echo "prtdir /usr/ports/contrib:atk, at-spi2-core, gdk-pixbuf, glib, gobject-introspection, gstreamer-1.0, gstreamer-plugins-bad-1.0, gstreamer-plugins-base-1.0, gstreamer-plugins-good-1.0, gstreamer-plugins-libav-1.0, gstreamer-plugins-ugly-1.0, gtk3, harfbuzz, libatk-bridge2.0, libcacard, libgovirt, libpcre, libphodav, libsasl2, libsoup, libusbredir, orc, pango, rest, spice, spice-gtk, spice-protocol, virt-viewer" >> /ts/etc/prt-get.conf
 
