@@ -47,7 +47,7 @@ echo "prtdir /usr/ports/contrib:atk, at-spi2-core, gdk-pixbuf, glib, gobject-int
 Install & upgrade Dependency
 ```
 prt-get remove cyrus-sasl
-prt-get install $(prt-get quickdep virt-viewer)
+prt-get update $(prt-get quickdep virt-viewer)
 ```
 
 add line in your file build.conf
