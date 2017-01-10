@@ -25,6 +25,21 @@ configure:
         DBus:                     yes
         WebDAV support:           yes
         LZ4 support:              yes
+        
+        
+        GTK+ 3.16.1
+        ===========
+
+        GDK backends:         x11
+        X11 extensions:       XKB Xinerama XI2.2 XRANDR XFIXES Composite DAMAGE
+        Print backends:       file lpr cups cloudprint
+        Dynamic modules:      yes
+        Included immodules:   none
+        colord support:       no
+        libcanberra support:  no
+        Introspection:        no (disabled, use --enable-introspection to enable)
+        Debugging:            yes
+        Documentation:        no
 ```
 
 
