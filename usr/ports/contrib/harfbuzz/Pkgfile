@@ -1,0 +1,23 @@
+# Description: A library for layout and rendering of text
+# URL: http://www.gtk.org/
+# Maintainer: Tilman Sauerbeck, tilman at crux dot nu
+# Depends on: cairo, glib, xorg-libsm, xorg-libxext, xorg-libxft
+
+name=harfbuzz
+version=1.1.2
+release=1
+source=(https://www.freedesktop.org/software/$name/release/$name-$version.tar.bz2)
+
+build () {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+    --mandir=/usr/share/man \
+    --disable-introspection \
+    --disable-static \
+    --enable-shared \
+
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share
+}
