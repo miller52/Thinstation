@@ -1,7 +1,7 @@
 # Description: A multi-platform toolkit for creating graphical user interfaces
 # URL: http://www.gtk.org/
 # Maintainer: Tilman Sauerbeck, tilman at crux dot nu
-# Depends on: atk, hicolor-icon-theme, gdk-pixbuf, pango, xorg-libsm, xorg-libxcursor, xorg-libxinerama, xorg-libxrandr, xorg-libxcomposite
+# Depends on: atk, atk-bridge-2.0, hicolor-icon-theme, gdk-pixbuf, pango, xorg-libsm, xorg-libxcursor, xorg-libxinerama, xorg-libxrandr, xorg-libxcomposite
 
 name=gtk3
 version=3.16.1
