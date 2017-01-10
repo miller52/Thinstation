@@ -1,0 +1,25 @@
+# Description: VirtViewer package with support ovirt and spice-gtk
+# URL: http://www.thinstation.org
+# Maintainer: Donald A. Cupp Jr. (don cupp jr at ya hoo dot com)
+# Packager:   Savichev Alexandr, savicheval at gmail dot com
+# Depends on: spice-gtk, libgovirt, gtk3
+
+name=virt-viewer
+version=5.0
+release=1
+source=(http://virt-manager.org/download/sources/virt-viewer/virt-viewer-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+    --without-libvirt \
+    --without-gtk-vnc \
+    --with-spice-gtk \
+    --with-ovirt \
+    --disable-update-mimedb \
+    --with-gtk=3.0
+
+  make
+  make DESTDIR=$PKG install
+}
