@@ -1,7 +1,7 @@
 # Description: A library for layout and rendering of text
 # URL: http://www.gtk.org/
 # Maintainer: Tilman Sauerbeck, tilman at crux dot nu
-# Depends on: cairo, glib, xorg-libsm, xorg-libxext, xorg-libxft
+# Depends on: harfbuzz, cairo, glib, xorg-libsm, xorg-libxext, xorg-libxft
 
 name=pango
 version=1.36.7
