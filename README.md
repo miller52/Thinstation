@@ -28,18 +28,18 @@ configure:
         LZ4 support:              yes
         
 ===================================================================================================
-        GTK+ 3.16.1
+                GTK+ 3.16.1
         ===========
 
         GDK backends:         x11
         X11 extensions:       XKB Xinerama XI2.2 XRANDR XFIXES Composite DAMAGE
-        Print backends:       file lpr cups cloudprint
+        Print backends:       file lpr
         Dynamic modules:      yes
         Included immodules:   none
         colord support:       no
         libcanberra support:  no
         Introspection:        no (disabled, use --enable-introspection to enable)
-        Debugging:            yes
+        Debugging:            minimum
         Documentation:        no
         
 ===================================================================================================
