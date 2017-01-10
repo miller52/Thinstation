@@ -30,10 +30,7 @@ configure:
 
 Instruction:
 
-1. Execute command for Clean chroot
-```
-sudo ./setup-chroot -c
-```
+1. Execute command for Clean chroot ```sudo ./setup-chroot -c```
 2. Copy files to Thinstation directory and Add First Line in /ts/etc/prt-get.conf
 ```
 prtdir /usr/ports/contrib
