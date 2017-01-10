@@ -43,6 +43,7 @@ Install & upgrade Dependency
 ```
 prt-get remove cyrus-sasl
 prt-get update $(prt-get quickdep virt-viewer)
+prt-get install $(prt-get quickdep virt-viewer)
 ```
 
 add line in your file build.conf
