@@ -30,19 +30,17 @@ configure:
 
 Instruction:
 
-1. Copy files to Thinstation directory and add first line in /ts/etc/prt-get.conf
+1. Execute command for Clean chroot
+```
+sudo ./setup-chroot -c
+```
+2. Copy files to Thinstation directory and Add First Line in /ts/etc/prt-get.conf
 ```
 prtdir /usr/ports/contrib
 runscripts yes
 ```
-2. Enter to TS (sudo ./setup-chroot)
-3. Run the following command:
-
-
-Clean chroot
-```
-clean_chroot
-```
+3. Enter to TS (sudo ./setup-chroot)
+4. Run the following command:
 
 Install & upgrade Dependency
 ```
