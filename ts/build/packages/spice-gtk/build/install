@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export PACKAGE=spice-gtk
+export PORTS="gtk3 spice-gtk virt-viewer"
+export DROP_DIRS=lib/icons
+repackage -e
+
+returnval=$?
+
+exit $returnval
