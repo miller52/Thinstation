@@ -30,8 +30,7 @@ configure:
 
 Instruction:
 
-1. Copy files to Thinstation directory
-1.1 Add first line in /ts/etc/prt-get.conf
+1. Copy files to Thinstation directory and add first line in /ts/etc/prt-get.conf
 ```
 prtdir /usr/ports/contrib
 runscripts yes
